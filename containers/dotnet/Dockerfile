@@ -27,9 +27,13 @@ RUN rm ./vscode-server-linux-x64.tar.gz
 
 # create server extensions directory
 RUN mkdir -p /home/vscode/.vscode-remote/extensions
+RUN mkdir -p /home/vscode/.vscode-server/extensions
 
 # TODO: add some extensions
 RUN chown -R vscode /home/vscode
+
+RUN mkdir /workspace
+RUN chown -R vscode /workspace
 
 COPY entrypoint.sh /run/
 RUN chmod +x /run/entrypoint.sh
