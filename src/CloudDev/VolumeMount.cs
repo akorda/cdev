@@ -1,0 +1,1 @@
+public record VolumeMount(string VolumeName, string MountPoint);
